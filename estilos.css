@@ -317,3 +317,45 @@ body {
     margin-top: auto;
     border-top: 1px solid rgba(255, 255, 255, 0.05);
 }
+
+/* --- NUEVOS ESTILOS PARA ADICIONALES --- */
+
+/* Ajuste de tarjeta para soportar imagen tipo póster a la izquierda */
+.movie-card {
+    display: flex;
+    flex-direction: column;
+    padding: 0; /* Quitamos padding general para ajustar la imagen */
+    overflow: hidden;
+}
+
+.movie-card-content {
+    padding: 1.2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-grow: 1;
+}
+
+/* Estilo para el contenedor del póster */
+.movie-poster {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    background-color: #0b0f19;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Estilo de las Estrellas */
+.rating-display {
+    color: #ffd700;
+    font-size: 0.9rem;
+    margin-top: 0.3rem;
+    letter-spacing: 1px;
+}
+
+/* Pequeño cambio adaptativo para que la barra de herramientas no colapse feo */
+@media (max-width: 600px) {
+    .toolbar {
+        flex-direction: column;
+    }
+}
