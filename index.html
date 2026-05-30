@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CosmoFilms - Sistema de Gestión de Películas</title>
+    <title>CosmoFilms Pro - Sistema de Gestión de Películas</title>
     <link rel="stylesheet" href="estilos.css">
 </head>
 <body>
 
     <header class="navbar-tornasol">
-        <h1>🌌 CosmoFilms</h1>
-        <p>Tu Sistema de Gestión Cinematográfica Espacial</p>
+        <h1>🌌 CosmoFilms Pro</h1>
+        <p>Tu Sistema de Gestión Cinematográfica Espacial con Extras</p>
     </header>
 
     <main class="container">
@@ -49,6 +49,23 @@
                     <small class="error-msg" id="error-category"></small>
                 </div>
 
+                <div class="form-group">
+                    <label for="image-url">URL del Póster o Imagen:</label>
+                    <input type="url" id="image-url" placeholder="Ej. https://url-de-la-imagen.com/poster.jpg">
+                    <small class="error-msg" id="error-image"></small>
+                </div>
+
+                <div class="form-group">
+                    <label for="rating">Puntuación:</label>
+                    <select id="rating" required>
+                        <option value="5">⭐⭐⭐⭐⭐ (Excelente)</option>
+                        <option value="4">⭐⭐⭐⭐ (Buena)</option>
+                        <option value="3">⭐⭐⭐ (Regular)</option>
+                        <option value="2">⭐⭐ (Mala)</option>
+                        <option value="1">⭐ (Pésima)</option>
+                    </select>
+                </div>
+
                 <div class="form-buttons">
                     <button type="submit" id="btn-save" class="btn btn-submit">Guardar Película</button>
                     <button type="button" id="btn-cancel" class="btn btn-cancel hidden">Cancelar Edición</button>
@@ -64,7 +81,6 @@
                 </div>
                 
                 <div class="filter-box">
-                    <label for="filter-category">Filtrar por:</label>
                     <select id="filter-category">
                         <option value="Todas">Todas las categorías</option>
                         <option value="Acción">Acción</option>
@@ -73,19 +89,26 @@
                         <option value="Terror">Terror</option>
                     </select>
                 </div>
+
+                <div class="filter-box">
+                    <select id="sort-movies">
+                        <option value="recent">Más recientes primero</option>
+                        <option value="oldest">Más antiguas primero</option>
+                        <option value="rating">Mejor puntuadas</option>
+                    </select>
+                </div>
             </div>
 
             <div class="counter-badge">
                 Películas en catálogo: <span id="movie-counter">0</span>
             </div>
 
-            <div id="movies-container" class="movies-grid">
-                </div>
+            <div id="movies-container" class="movies-grid"></div>
         </section>
     </main>
 
     <footer class="footer">
-        <p>&copy; 2026 - Desarrollo de Sistema de Gestión de Películas | Corte #3</p>
+        <p>&copy; 2026 - Desarrollo de Sistema de Gestión de Películas | Funcionalidades Pro</p>
     </footer>
 
     <script src="script.js"></script>
