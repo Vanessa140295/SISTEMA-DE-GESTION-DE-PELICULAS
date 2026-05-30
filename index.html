@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CosmoFilms - Sistema de Gestión de Películas</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+
+    <header class="navbar-tornasol">
+        <h1>🌌 CosmoFilms</h1>
+        <p>Tu Sistema de Gestión Cinematográfica Espacial</p>
+    </header>
+
+    <main class="container">
+        <section class="form-section">
+            <h2 id="form-title">Registrar Nueva Película</h2>
+            <form id="movie-form" novalidate>
+                <input type="hidden" id="movie-id">
+
+                <div class="form-group">
+                    <label for="title">Título de la Película:</label>
+                    <input type="text" id="title" placeholder="Ej. Inception" required>
+                    <small class="error-msg" id="error-title"></small>
+                </div>
+
+                <div class="form-group">
+                    <label for="director">Director:</label>
+                    <input type="text" id="director" placeholder="Ej. Christopher Nolan" required>
+                    <small class="error-msg" id="error-director"></small>
+                </div>
+
+                <div class="form-group">
+                    <label for="year">Año de Estreno:</label>
+                    <input type="number" id="year" placeholder="Rango: 1900 - 2026" min="1900" max="2026" required>
+                    <small class="error-msg" id="error-year"></small>
+                </div>
+
+                <div class="form-group">
+                    <label for="category">Categoría:</label>
+                    <select id="category" required>
+                        <option value="" disabled selected>-- Selecciona una categoría --</option>
+                        <option value="Acción">Acción</option>
+                        <option value="Comedia">Comedia</option>
+                        <option value="Drama">Drama</option>
+                        <option value="Terror">Terror</option>
+                    </select>
+                    <small class="error-msg" id="error-category"></small>
+                </div>
+
+                <div class="form-buttons">
+                    <button type="submit" id="btn-save" class="btn btn-submit">Guardar Película</button>
+                    <button type="button" id="btn-cancel" class="btn btn-cancel hidden">Cancelar Edición</button>
+                </div>
+            </form>
+        </section>
+
+        <section class="catalog-section">
+            
+            <div class="toolbar">
+                <div class="search-box">
+                    <input type="text" id="search-input" placeholder="🔍 Buscar por título en tiempo real...">
+                </div>
+                
+                <div class="filter-box">
+                    <label for="filter-category">Filtrar por:</label>
+                    <select id="filter-category">
+                        <option value="Todas">Todas las categorías</option>
+                        <option value="Acción">Acción</option>
+                        <option value="Comedia">Comedia</option>
+                        <option value="Drama">Drama</option>
+                        <option value="Terror">Terror</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="counter-badge">
+                Películas en catálogo: <span id="movie-counter">0</span>
+            </div>
+
+            <div id="movies-container" class="movies-grid">
+                </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2026 - Desarrollo de Sistema de Gestión de Películas | Corte #3</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
